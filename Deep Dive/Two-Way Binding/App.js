@@ -29,9 +29,7 @@ function App() {
       </section>
       <section id="draft">
         <h2>Your feedback</h2>
-
         <Review feedback={feedback} student={name} />
-
         <p>
           <button>Save</button>
         </p>
