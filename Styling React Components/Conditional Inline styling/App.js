@@ -1,31 +1,25 @@
 import React from "react";
 
 function App() {
-  const [style, setStyle] = React.useState("white");
+  const [choice, setChoice] = React.useState(null);
 
-  function handleClick(identifier) {
-    if (identifier === "Yes") {
-      setStyle("green");
-    } else if (identifier === "No") {
-      setStyle("red");
-    }
+  let cssClass;
+
+  if (choice === "yes") {
+    cssClass = "highlight-green";
+  } else if (choice === "no") {
+    cssClass = "highlight-red";
   }
 
   return (
     <div id="app">
-      <h1
-        style={{
-          color: style,
-        }}
-      >
-        CSS is great!
-      </h1>
+      <h1 className={cssClass}>CSS is great!</h1>
       <menu>
         <li>
-          <button onClick={() => handleClick("Yes")}>Yes</button>
+          <button onClick={() => setChoice("yes")}>Yes</button>
         </li>
         <li>
-          <button onClick={() => handleClick("No")}>No</button>
+          <button onClick={() => setChoice("no")}>No</button>
         </li>
       </menu>
     </div>
@@ -34,7 +28,6 @@ function App() {
 
 export default App;
 
-// alternative:
 /*
 function App() {
   const [choice, setChoice] = React.useState(null);
