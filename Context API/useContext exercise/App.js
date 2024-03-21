@@ -1,4 +1,4 @@
-import Page from "./Page";
+import Page from "./Page.js";
 import React from "react";
 import ThemeContextProvider from "./ThemeContextProvider.js";
 
